@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agencia Creativa - Inicio</title>
+  <title>InnovaWeb - Inicio</title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -52,6 +52,21 @@
   </div>
 </section>
 
+<!-- Contacto / Cotización -->
+<section class="contacto" id="contacto">
+  <div class="contact-container">
+    <h2>¿Listo para trabajar juntos?</h2>
+    <p>Rellena el siguiente formulario y te enviaremos una cotización personalizada.</p>
+
+    <form class="contact-form" id="cotizacionForm">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+      <button type="submit">Enviar Cotización</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
+  </div>
+</section>
 
 
 
@@ -60,6 +75,7 @@
 
 <script src="./js/main.js"></script>
 <script src="./js/index_js/sidebar.js"></script>
+<script src="./js/index_js/contacto.js"></script>
 
 </body>
 </html>
