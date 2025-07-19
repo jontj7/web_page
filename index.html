@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agencia Creativa - Inicio</title>
-  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
@@ -21,6 +21,41 @@
       <a href="#contacto" class="btn-cta">Cotiza Ahora</a>
     </div>
   </header>
+
+  <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <h2>Menú</h2>
+        <button id="closeSidebar">×</button>
+    </div>
+    <ul class="sidebar-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    </aside>
+
+<!-- Botón flotante para abrir el sidebar -->
+<button id="openSidebar" class="sidebar-toggle">☰</button>
+
+
+
+
+
+<!-- <script>
+  const sidebar = document.getElementById('sidebar');
+  const openBtn = document.getElementById('openSidebar');
+  const closeBtn = document.getElementById('closeSidebar');
+
+  openBtn.addEventListener('click', () => {
+    sidebar.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+  }); -->
+</script>
 
 </body>
 </html>
