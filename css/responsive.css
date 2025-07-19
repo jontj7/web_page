@@ -1,11 +1,14 @@
+/* 📱 MÓVIL: Máx 767px */
 @media (max-width: 767px) {
-  /* NAVBAR */
-  .nav-links {
-    display: none;
+  /* Mostrar sidebar solo en móvil */
+  .sidebar,
+  .sidebar-toggle {
+    display: block !important;
   }
 
-  .btn-cta {
-    display: none;
+  /* Ocultar navbar en móvil */
+  .navbar {
+    display: none !important;
   }
 
   /* HERO */
@@ -35,29 +38,49 @@
   }
 }
 
-/*tablet*/
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
+/* 💻 TABLET y DESKTOP: Desde 768px en adelante */
+@media (min-width: 768px) {
+  /* Mostrar navbar en tablet/PC */
+  .navbar {
+    display: flex !important;
   }
 
-  .contact-container {
-    padding: 30px;
+  /* Ocultar sidebar en tablet/PC */
+  .sidebar,
+  .sidebar-toggle {
+    display: none !important;
   }
 
-  .footer-content {
-    flex-direction: column;
-    gap: 25px;
-    text-align: center;
+  /* Ajustes visuales */
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .btn-cta {
+    display: inline-block;
   }
 }
-
-/*menu lateral solo en movil*/
-
+/* Ocultar sidebar y botón hamburguesa en escritorio */
 @media (min-width: 768px) {
   .sidebar,
   .sidebar-toggle {
     display: none;
   }
+}
+
+/* Ocultar navbar en móvil */
+@media (max-width: 767px) {
+  .navbar {
+    display: none;
+  }
+}
+.sidebar-toggle.hidden {
+  display: none;
 }
