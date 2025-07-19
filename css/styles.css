@@ -23,7 +23,9 @@ body {
 }
 
 .logo {
-  height: 45px;
+  height: 150px;  /* o prueba con 60, 70... */
+  max-width: 200px;
+  object-fit: contain;
 }
 
 .nav-links a {
@@ -46,25 +48,30 @@ body {
   font-weight: bold;
 }
 
-/*side bar */
-
+/* === SIDEBAR BASE === */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 250px;
+  left: 0;
+  width: 140px;
   height: 100vh;
   background: #1a1a1a;
   color: white;
-  transition: left 0.3s ease;
-  z-index: 999;
   padding: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
 }
 
 .sidebar.open {
-  left: 0;
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
 }
 
+/* === HEADER DEL SIDEBAR === */
 .sidebar-header {
   display: flex;
   justify-content: space-between;
@@ -73,35 +80,41 @@ body {
 
 .sidebar-header h2 {
   margin: 0;
+  font-size: 1.2rem;
 }
 
 .sidebar-header button {
   background: none;
-  border: none;
+  border: 2px solid white;
+  border-radius: 5px;
   font-size: 1.5rem;
   color: white;
   cursor: pointer;
+  padding: 2px 8px;
 }
 
+/* === LINKS === */
 .sidebar-links {
   list-style: none;
   padding: 20px 0 0 0;
 }
 
 .sidebar-links li {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .sidebar-links a {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1rem;
 }
 
 .sidebar-links a:hover {
   text-decoration: underline;
 }
 
+/* === BOTÓN FLOTANTE === */
 .sidebar-toggle {
   position: fixed;
   top: 20px;
@@ -115,7 +128,26 @@ body {
   height: 45px;
   cursor: pointer;
   z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+.sidebar-toggle.hidden {
+  display: none !important;
+}
+
+
+
+.sidebar-logo {
+  width: 250px;
+  max-width: 100px;
+  height: left;
+  display: block;
+  margin: 0 auto 20px auto;
+  object-fit: contain;
+}
+
 
 /*hero */
 

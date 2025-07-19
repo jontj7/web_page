@@ -6,100 +6,94 @@
   <title>InnovaWeb - Inicio</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/responsive.css">
-
+  <link rel="icon" href="./assets/images/logow.png" type="image/x-icon">
 </head>
 <body>
 
-  <!-- Encabezado -->
-  <header class="navbar">
-    <div class="container">
-      <img src="assets/logo.png" alt="Logo Agencia" class="logo">
-      <nav class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#casos de exito">Casos de Exito</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <a href="#contacto" class="btn-cta">Cotiza Ahora</a>
-    </div>
-  </header>
-
-  <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-        <h2>Menú</h2>
-        <button id="closeSidebar">×</button>
-    </div>
-    <ul class="sidebar-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#portafolio">Portafolio</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    </aside>
-
-<!-- Botón flotante para abrir el sidebar -->
+ <!-- Botón hamburguesa solo en móvil -->
 <button id="openSidebar" class="sidebar-toggle">☰</button>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1 class="fade-in">Transformamos tu idea en realidad digital</h1>
-    <p class="fade-in tagline">Agencia creativa con rapidez, personalización y soporte continuo</p>
-
-    <ul id="benefits" class="benefits-list"></ul>
-
-    <a href="#contacto" class="cta-button">Solicita tu cotización</a>
+<!-- Sidebar solo para móvil -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <img src="./assets/images/InnovaWeb.png" alt="Logo Agencia" class="sidebar-logo">
   </div>
-</section>
+  <ul class="sidebar-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#portafolio">Portafolio</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</aside>
 
-<!-- Contacto / Cotización -->
-<section class="contacto" id="contacto">
-  <div class="contact-container">
-    <h2>¿Listo para trabajar juntos?</h2>
-    <p>Rellena el siguiente formulario y te enviaremos una cotización personalizada.</p>
-
-    <form class="contact-form" id="cotizacionForm">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
-      <button type="submit">Enviar Cotización</button>
-      <p class="form-status" id="formStatus"></p>
-    </form>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-brand">
-      <img src="assets/logo.png" alt="Logo Agencia" class="footer-logo">
-      <p>Agencia Creativa XYZ &copy; 2025 - Todos los derechos reservados.</p>
-    </div>
-
-    <div class="footer-links">
+<!-- Encabezado (navbar clásico para escritorio) -->
+<header class="navbar">
+  <div class="container">
+    <img src="./assets/images/InnovaWeb.png" alt="Logo Agencia" class="logo">
+    <nav class="nav-links">
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
-      <a href="#portafolio">Portafolio</a>
+      <a href="#casos de exito">Casos de Éxito</a>
       <a href="#contacto">Contacto</a>
-    </div>
-
-    <div class="footer-social">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    </div>
+    </nav>
+    <a href="#contacto" class="btn-cta">Cotiza Ahora</a>
   </div>
-</footer>
+</header>
 
 
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="fade-in">Transformamos tu idea en realidad digital</h1>
+      <p class="fade-in tagline">Agencia creativa con rapidez, personalización y soporte continuo</p>
+      <ul id="benefits" class="benefits-list"></ul>
+      <a href="#contacto" class="cta-button">Solicita tu cotización</a>
+    </div>
+  </section>
 
+  <!-- Contacto / Cotización -->
+  <section class="contacto" id="contacto">
+    <div class="contact-container">
+      <h2>¿Listo para trabajar juntos?</h2>
+      <p>Rellena el siguiente formulario y te enviaremos una cotización personalizada.</p>
 
+      <form class="contact-form" id="cotizacionForm">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+        <button type="submit">Enviar Cotización</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+  </section>
 
-<script src="./js/main.js"></script>
-<script src="./js/index_js/sidebar.js"></script>
-<script src="./js/index_js/contacto.js"></script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Logo Agencia" class="footer-logo">
+        <p>Agencia Creativa XYZ &copy; 2025 - Todos los derechos reservados.</p>
+      </div>
 
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/main.js"></script>
+  <script src="./js/index_js/sidebar.js"></script>
+  <script src="./js/index_js/contacto.js"></script>
 </body>
 </html>
