@@ -1,0 +1,63 @@
+@media (max-width: 767px) {
+  /* NAVBAR */
+  .nav-links {
+    display: none;
+  }
+
+  .btn-cta {
+    display: none;
+  }
+
+  /* HERO */
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p,
+  .benefits-list li {
+    font-size: 1rem;
+  }
+
+  /* CONTACTO */
+  .contact-container {
+    padding: 20px;
+  }
+
+  /* FOOTER */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-social {
+    margin-top: 15px;
+  }
+}
+
+/*tablet*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .contact-container {
+    padding: 30px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+}
+
+/*menu lateral solo en movil*/
+
+@media (min-width: 768px) {
+  .sidebar,
+  .sidebar-toggle {
+    display: none;
+  }
+}
