@@ -3,24 +3,318 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agencia Creativa - Inicio</title>
-  <link rel="stylesheet" href="styles/navbar.css">
+  <title>InnovaWeb - Inicio</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="icon" href="./assets/images/logow.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- SwiperJS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 <body>
 
-  <!-- Encabezado -->
-  <header class="navbar">
-    <div class="container">
-      <img src="assets/logo.png" alt="Logo Agencia" class="logo">
-      <nav class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#casos de exito">Casos de Exito</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <a href="#contacto" class="btn-cta">Cotiza Ahora</a>
-    </div>
-  </header>
+<!-- Botón hamburguesa solo en móvil -->
+<button id="openSidebar" class="sidebar-toggle">☰</button>
 
+<!-- Sidebar solo para móvil -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <img src="./assets/images/InnovaWeb.png" alt="Logo Agencia" class="sidebar-logo">
+  </div>
+  <ul class="sidebar-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#portafolio">Portafolio</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</aside>
+
+<!-- Encabezado (navbar clásico para escritorio) -->
+<header class="navbar">
+  <div class="container">
+    <img src="./assets/images/InnovaWeb.png" alt="Logo Agencia" class="logo" data-aos="fade-right">
+    <nav class="nav-links" data-aos="fade-down">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#casos de exito">Casos de Éxito</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn-cta" data-aos="fade-left">Cotiza Ahora</a>
+  </div>
+</header>
+
+<!-- Hero Section con video -->
+<section class="hero" id="inicio">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="./assets/videos/fondo-hero.mp4" type="video/mp4">
+    Tu navegador no admite la reproducción de video.
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content" data-aos="zoom-in">
+    <h1 class="fade-in">Transformamos tu idea en realidad digital</h1>
+    <p class="fade-in tagline">Agencia creativa con rapidez, personalización y soporte continuo</p>
+    <ul id="benefits" class="benefits-list"></ul>
+    <a href="#contacto" class="cta-button">Solicita tu cotización</a>
+  </div>
+</section>
+
+<!-- Sección Quiénes Somos -->
+<section class="quienes-somos" id="quienes-somos">
+  <div class="qs-container" data-aos="fade-up">
+    <h2 class="qs-title">¿Quiénes Somos?</h2>
+    <p class="qs-text">
+      Somos una agencia enfocada en soluciones digitales personalizadas. 
+      Nuestra misión es ayudarte a destacar en el mundo online con sitios modernos, funcionales y eficaces.
+    </p>
+  </div>
+</section>
+
+<!-- Sección Misión y Visión -->
+<section class="mision-vision">
+  <div class="mv-wrapper">
+    <div class="mv-card" data-aos="fade-right">
+      <h2>Misión</h2>
+      <p>
+        Brindar soluciones digitales innovadoras y personalizadas que impulsen 
+        el crecimiento de nuestros clientes, combinando creatividad, tecnología y compromiso.
+      </p>
+    </div>
+    <div class="mv-card" data-aos="fade-left">
+      <h2>Visión</h2>
+      <p>
+        Ser la agencia líder en desarrollo web en Latinoamérica, reconocida 
+        por su calidad, rapidez, y acompañamiento continuo en cada proyecto digital.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Tecnologías -->
+<section class="tecnologias">
+  <h2 class="section-title" data-aos="fade-up">Tecnologías que usamos</h2>
+  <div class="tech-carousel">
+    <div class="tech-track">
+      <!-- Primera tanda -->
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+      <!-- Segunda tanda -->
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+    </div>
+  </div>
+</section>
+
+<section class="planes-nuevos" id="planes">
+    <h2 class="section-title" data-aos="fade-up">Nuestros Planes</h2>
+
+    <!-- Swiper Carrusel -->
+    <div class="swiper mySwiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide plan-box">
+          <div class="plan-header">
+            <span class="plan-icon">💡</span>
+            <h3>Básico</h3>
+          </div>
+          <p class="plan-price">$120</p>
+          <ul class="plan-details">
+            <li>1 página web</li>
+            <li>Diseño responsive</li>
+            <li>Formulario de contacto</li>
+          </ul>
+          <a href="#contacto" class="plan-cta">Elegir Plan</a>
+        </div>
+
+        <div class="swiper-slide plan-box destacado">
+          <div class="plan-header">
+            <span class="plan-icon">⚡</span>
+            <h3>Pro</h3>
+          </div>
+          <p class="plan-price">$250</p>
+          <ul class="plan-details">
+            <li>Hasta 5 páginas</li>
+            <li>Diseño a medida</li>
+            <li>SEO básico</li>
+          </ul>
+          <a href="#contacto" class="plan-cta">Elegir Plan</a>
+        </div>
+
+        <div class="swiper-slide plan-box">
+          <div class="plan-header">
+            <span class="plan-icon">🌐</span>
+            <h3>Premium</h3>
+          </div>
+          <p class="plan-price">$450</p>
+          <ul class="plan-details">
+            <li>Sitio completo + blog</li>
+            <li>Panel administrativo</li>
+            <li>Redes sociales integradas</li>
+          </ul>
+          <a href="#contacto" class="plan-cta">Elegir Plan</a>
+        </div>
+        <div class="swiper-slide plan-box">
+        <div class="plan-header">
+            <span class="plan-icon">🚀</span>
+            <h3>Startup</h3>
+        </div>
+        <p class="plan-price">$180</p>
+        <ul class="plan-details">
+            <li>Landing page + Blog</li>
+            <li>Diseño personalizable</li>
+            <li>1 año de hosting incluido</li>
+        </ul>
+        <a href="#contacto" class="plan-cta">Elegir Plan</a>
+        </div>
+
+        <div class="swiper-slide plan-box destacado">
+        <div class="plan-header">
+            <span class="plan-icon">🏢</span>
+            <h3>Empresarial</h3>
+        </div>
+        <p class="plan-price">$650</p>
+        <ul class="plan-details">
+            <li>Sitio web corporativo</li>
+            <li>Panel de control completo</li>
+            <li>Soporte técnico y backups</li>
+        </ul>
+        <a href="#contacto" class="plan-cta">Elegir Plan</a>
+        </div>
+
+      </div>
+
+      <!-- Controles del carrusel -->
+      <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- Contacto / Cotización -->
+<section class="contacto" id="contacto">
+  <div class="contact-container" data-aos="fade-up">
+    <h2>¿Listo para trabajar juntos?</h2>
+    <p>Rellena el siguiente formulario y te enviaremos una cotización personalizada.</p>
+    <form class="contact-form" id="cotizacionForm">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+      <button type="submit">Enviar Cotización</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container" data-aos="fade-up">
+    <h2>Suscríbete a nuestro boletín</h2>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Tu correo electrónico" required>
+      <button type="submit">Suscribirme</button>
+    </form>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container" data-aos="fade-up">
+    <h2>Preguntas Frecuentes</h2>
+    <details>
+      <summary>¿Cuánto tarda un sitio web?</summary>
+      <p>Depende del proyecto, pero en promedio entre 2 y 4 semanas.</p>
+    </details>
+    <details>
+      <summary>¿Aceptan pagos por cuotas?</summary>
+      <p>Sí, tenemos opciones flexibles de pago.</p>
+    </details>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand" data-aos="fade-up" data-aos-once="true">
+      <img src="./assets/images/InnovaWeb.png" alt="Logo Agencia" class="footer-logo">
+      <p>Agencia Creativa XYZ &copy; 2025 - Todos los derechos reservados.</p>
+    </div>
+
+    <div class="footer-links" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+    <div class="footer-social" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Scripts -->
+<script src="./js/main.js"></script>
+<script src="./js/index_js/sidebar.js"></script>
+<script src="./js/index_js/contacto.js"></script>
+<script src="./js/index_js/Doom_js/cambiar-titulo-hero.js"></script>
+<script src="./js/index_js/Doom_js/agregar-plan-carrusel.js"></script>
+<script src="./js/index_js/Doom_js/scroll-header.js"></script>
+<script src="./js/index_js/Doom_js/hover-logo.js"></script>
+<script src="./js/index_js/Doom_js/auto-beneficios.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1.1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
+
+
+<script>
+   AOS.init({
+    once: true, // <- esto también es clave
+  });
+</script>
 </body>
 </html>

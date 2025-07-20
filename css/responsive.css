@@ -1,0 +1,86 @@
+/* 📱 MÓVIL: Máx 767px */
+@media (max-width: 767px) {
+  /* Mostrar sidebar solo en móvil */
+  .sidebar,
+  .sidebar-toggle {
+    display: block !important;
+  }
+
+  /* Ocultar navbar en móvil */
+  .navbar {
+    display: none !important;
+  }
+
+  /* HERO */
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p,
+  .benefits-list li {
+    font-size: 1rem;
+  }
+
+  /* CONTACTO */
+  .contact-container {
+    padding: 20px;
+  }
+
+  /* FOOTER */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-social {
+    margin-top: 15px;
+  }
+}
+
+/* 💻 TABLET y DESKTOP: Desde 768px en adelante */
+@media (min-width: 768px) {
+  /* Mostrar navbar en tablet/PC */
+  .navbar {
+    display: flex !important;
+  }
+
+  /* Ocultar sidebar en tablet/PC */
+  .sidebar,
+  .sidebar-toggle {
+    display: none !important;
+  }
+
+  /* Ajustes visuales */
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .btn-cta {
+    display: inline-block;
+  }
+}
+/* Ocultar sidebar y botón hamburguesa en escritorio */
+@media (min-width: 768px) {
+  .sidebar,
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
+/* Ocultar navbar en móvil */
+@media (max-width: 767px) {
+  .navbar {
+    display: none;
+  }
+}
+.sidebar-toggle.hidden {
+  display: none;
+}
