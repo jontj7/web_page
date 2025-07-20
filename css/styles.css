@@ -5,6 +5,16 @@ body {
   color: white;
 }
 
+header.navbar {
+  transition: transform 0.3s ease-in-out;
+}
+
+header.navbar.hide-header {
+  transform: translateY(-100%);
+}
+
+
+
 .navbar {
   position: fixed;
   top: 0;
@@ -72,6 +82,7 @@ body {
 }
 
 /* === HEADER DEL SIDEBAR === */
+
 .sidebar-header {
   display: flex;
   justify-content: space-between;
@@ -149,19 +160,29 @@ body {
 }
 
 
-/*hero */
-
+/* === HERO CON VIDEO === */
 .hero {
   position: relative;
-  height: 100vh;
-  background: url('../assets/fondo-proyectos.jpg') center/cover no-repeat;
+  height: 70vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
 }
 
+/* Video de fondo */
+.hero video.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Capa oscura sobre el video */
 .hero-overlay {
   position: absolute;
   top: 0; left: 0;
@@ -171,6 +192,7 @@ body {
   z-index: 1;
 }
 
+/* Contenido por encima del video */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -179,6 +201,7 @@ body {
   max-width: 700px;
 }
 
+/* Animación de entrada */
 .hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
@@ -198,11 +221,16 @@ body {
 }
 
 .benefits-list li {
-  font-size: 1.1rem;
   opacity: 0;
-  margin: 8px 0;
-  transition: opacity 0.6s ease;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
 }
+
+.benefits-list li.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .cta-button {
   background-color: #00b894;
@@ -219,6 +247,249 @@ body {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* === QUIÉNES SOMOS === */
+.quienes-somos {
+  background-color: #121212;
+  padding: 60px 20px 30px 20px;
+  text-align: center;
+}
+
+.qs-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.qs-title {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.qs-text {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.7;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+
+
+/*mision y vision*/
+
+.mision-vision {
+  background-color: #121212;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.mv-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.mv-card {
+  background-color: #1f1f1f;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  flex: 1;
+  transition: transform 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+}
+
+.mv-card h2 {
+  color: #00b894;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.mv-card p {
+  color: #ddd;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Responsive para pantallas más grandes */
+@media (min-width: 768px) {
+  .mv-wrapper {
+    flex-direction: row;
+  }
+}
+
+/*tecnologias*/
+
+.tecnologias {
+  background-color: #121212;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #00b894;
+}
+
+.tech-carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.tech-track {
+  display: flex;
+  gap: 50px;
+  width: max-content;
+  animation: scroll-tech 20s linear infinite;
+}
+
+.tech-track img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.tech-track img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scroll-tech {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* NUEVO diseño - Sección de Planes */
+.planes-nuevos {
+  background: #f4f6f9;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.planes-nuevos .section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  color: #111;
+}
+
+/* Swiper personalizado */
+.swiper {
+  padding-bottom: 40px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Tarjeta base */
+.plan-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 2px solid transparent;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, border 0.3s ease;
+  color: #333;
+}
+
+.plan-box:hover {
+  transform: translateY(-8px);
+  border-color: #00adb5;
+}
+
+/* Tarjeta destacada */
+.plan-box.destacado {
+  border: 2px solid #00adb5;
+  background: linear-gradient(to bottom right, #e0fbfc, #ffffff);
+}
+
+/* Cabecera del plan */
+.plan-header {
+  margin-bottom: 20px;
+}
+
+.plan-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Precio */
+.plan-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00adb5;
+  margin-bottom: 20px;
+}
+
+/* Lista de características */
+.plan-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+.plan-details li {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Botón */
+.plan-cta {
+  background: #00adb5;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.plan-cta:hover {
+  background: #0197a3;
+  transform: scale(1.05);
+}
+
+/* Paginación del carrusel */
+.swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .planes-nuevos .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .plan-box {
+    max-width: 90%;
+  }
+}
+
+
 
 /*contacto*/
 .contacto {
@@ -298,7 +569,9 @@ body {
 }
 
 .footer-logo {
-  width: 50px;
+  width: 180px; /* Aumentado desde 80px */
+  max-width: 100%;
+  height: auto;
   margin-bottom: 10px;
 }
 
@@ -313,13 +586,21 @@ body {
   color: #fff;
 }
 
-.footer-social a {
-  margin: 0 8px;
-  font-size: 1.2rem;
-  color: #ccc;
-  text-decoration: none;
+.footer-social {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.footer-social a:hover {
+.footer-social a i {
+  font-size: 24px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover i {
+  transform: scale(1.2);
   color: #00b894;
 }
+
