@@ -10,8 +10,7 @@
 ✅ Estructura modular por secciones  
 ✅ Animaciones con AOS (Animate On Scroll)  
 ✅ Carrusel responsive con Swiper.js  
-✅ Sidebar dinámico y navegación fija  
-✅ Estilos personalizados (modo oscuro, glassmorphism)  
+✅ Sidebar dinámico y navegación fija    
 ✅ 100% responsive para móvil y escritorio
 
 ---
