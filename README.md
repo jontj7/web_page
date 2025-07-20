@@ -34,8 +34,3 @@
 - JavaScript (vanilla)
 - Swiper.js
 - AOS.js (scroll animations)
-
----
-
-## 📁 Estructura del proyecto
-
