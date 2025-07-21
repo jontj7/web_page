@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*--------------------Reset de stilos del home------------------*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #606060; /* Color de texto general */
+     background: linear-gradient(to right, #09203F, #1EAE98); /* Fondo general de la página */
+    padding-top: 76px; /* Para evitar que el contenido se superponga con la navbar fija */
+}
+
+/* Clases para el degradado personalizado */
+.gradient-bg-primary {
+    background: linear-gradient(to right, #09203F, #1EAE98);
+}
+
+.text-gradient-primary {
+    background: linear-gradient(to right, #09203F, #1EAE98);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback para navegadores que no soportan text-fill-color */
+}
+
+/* Estilos de la Navbar */
+#mainNavbar {
+    background-color: transparent; /* Inicialmente transparente */
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0.4rem 0; /* Padding inicial */
+}
+
+#mainNavbar .logo {
+    max-width: 180px; /* Tamaño del logo */
+    height: auto;
+    transition: max-width 0.3s ease-in-out; /* Transición para el tamaño del logo */
+}
+
+#mainNavbar .navbar-nav .nav-link {
+    color: #FFFFFF; /* Texto del enlace blanco */
+    font-weight: 600;
+    margin-right: 15px;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+#mainNavbar .navbar-nav .nav-link:hover,
+#mainNavbar .navbar-nav .nav-link.active {
+    color: #1EAE98; /* Color Aqua en hover o activo */
+}
+
+/* Efecto subrayado para enlaces activos/hover */
+#mainNavbar .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #1EAE98; /* Color Aqua para el subrayado */
+    transition: width 0.3s ease-in-out;
+}
+
+#mainNavbar .navbar-nav .nav-link:hover::after,
+#mainNavbar .navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* Estilo para el botón con degradado */
+.btn-custom-gradient {
+    background: linear-gradient(to right, #09203F, #1EAE98);
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 25px;
+    border-radius: 50px; /* Bordes redondeados */
+    font-weight: 600;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom-gradient:hover {
+    transform: translateY(-3px); /* Pequeño efecto de elevación */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF; /* Mantiene el color blanco en hover */
+}
+
+/* Estilos para el botón de búsqueda */
+.search-icon-btn {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.search-input-container {
+    display: none; /* Inicialmente oculto */
+    width: 0; /* Ancho inicial 0 */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    transition: width 0.3s ease-in-out; /* Transición suave para el ancho */
+}
+
+.search-input-container.active {
+    display: block; /* Muestra el contenedor */
+    width: 200px; /* Ancho deseado cuando está activo */
+}
+
+.search-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #1EAE98;
+    box-shadow: 0 0 0 0.25rem rgba(30, 174, 152, 0.25); /* Sombra de enfoque con color Aqua */
+}
+
+/* Estilo para la navbar al hacer scroll (sticky) */
+#mainNavbar.scrolled {
+    background: linear-gradient(to right, #09203F, #1EAE98); /* Degradado de fondo */
+    padding: 0.5rem 0; /* Padding reducido */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+#mainNavbar.scrolled .logo {
+    max-width: 150px; /* Logo más pequeño cuando está pegado */
+}
+/*-------------------------------------------------*/
+/* --- Sección Principal (Hero Section) ----- */
+/*-------------------------------------------------*/
+.hero-section {
+    position: relative;
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    overflow: hidden; /* Oculta cualquier desbordamiento del video */
+    display: flex; /* Asegura que flexbox funcione para centrar */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    padding-top: 0; /* Reinicia el padding superior para la sección */
+}
+
+.hero-section .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-section .video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra todo el espacio sin distorsionarse */
+}
+
+/* Overlay con degradado y transparencia */
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to right, rgba(9, 32, 63, 0.65), rgba(30, 174, 152, 0.55)); /* 75% y 65% de opacidad */
+}
+
+/* Contenido de texto y botón */
+.hero-section .container {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté por encima del overlay */
+    padding-bottom: 80px; /* Espacio para el botón si se posiciona de forma absoluta */
+}
+
+.hero-section h1 {
+    font-size: 3rem; /* Tamaño de fuente para el título principal */
+    font-weight: 400;
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section p.lead {
+    font-size: 1.15rem;
+    color: #EBEBEB; /* Gris claro para el subtítulo */
+    max-width: 800px;
+    margin: 0 auto 3rem auto; /* Centra el párrafo y añade margen inferior */
+}
+#btnPromociones {
+    font-size: 1.03rem;
+}
+
+/* Estilos para el Modal de Promociones */
+#modalPromociones .modal-content {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#modalPromociones .modal-header {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #F8F9FA;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#modalPromociones .modal-title {
+    font-weight: 700;
+}
+
+#modalPromociones .modal-body {
+    padding: 2rem;
+}
+
+#modalPromociones .modal-body p, #modalPromociones .modal-body li {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #606060;
+}
+
+#modalPromociones .modal-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
+
+#modalPromociones .modal-body ul li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+#modalPromociones .modal-body ul li::before {
+    content: "\f00c"; /* Ícono de check de Font Awesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #1EAE98; /* Color Aqua */
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+
+/* Media queries */
+/*--------Sección de navbar---------------*/
+@media (max-width: 991.98px) {
+    #mainNavbar .navbar-collapse {
+        background: linear-gradient(to bottom, #09203F, #1EAE98); /* Degradado para el menú colapsado */
+        margin-top: 0.5rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    #mainNavbar .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 0.75rem 0;
+        text-align: center;
+    }
+
+    #mainNavbar .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .search-input-container.active {
+        width: 100%; /* Ancho completo en móviles */
+        margin-top: 10px;
+    }
+}
+/* ----Hero Section--------- */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p.lead {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p.lead {
+        font-size: 0.9rem;
+    }
+}
