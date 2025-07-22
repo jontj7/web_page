@@ -74,7 +74,7 @@ body {
 
 /* Estilo para el botón con degradado */
 .btn-custom-gradient {
-    background: linear-gradient(to right, #09203F, #1EAE98);
+    background:  #1EAE98;
     border: none;
     color: #FFFFFF;
     padding: 10px 25px;
@@ -97,15 +97,17 @@ body {
 }
 
 .search-input-container {
-    display: none; /* Inicialmente oculto */
+    opacity: 0; /* Inicialmente transparente */
     width: 0; /* Ancho inicial 0 */
     overflow: hidden; /* Oculta el contenido que se desborda */
-    transition: width 0.3s ease-in-out; /* Transición suave para el ancho */
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Añade transición para opacity */
+    pointer-events: none; /* Evita interacciones cuando está oculto */
 }
 
 .search-input-container.active {
-    display: block; /* Muestra el contenedor */
+    opacity: 1; /* Completamente visible */
     width: 200px; /* Ancho deseado cuando está activo */
+    pointer-events: auto; /* Permite interacciones cuando está activo */
 }
 
 .search-input {
@@ -173,7 +175,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: linear-gradient(to right, rgba(9, 32, 63, 0.65), rgba(30, 174, 152, 0.55)); /* 75% y 65% de opacidad */
+    background: linear-gradient(to right, rgba(9, 32, 63, 0.65), rgba(30, 174, 152, 0.55)); /* 65% y 55% de opacidad */
 }
 
 /* Contenido de texto y botón */
@@ -213,6 +215,7 @@ body {
     transform: translateY(-3px); 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     color: #FFFFFF; 
+    opacity: 0.80;
 }
 
 /* Estilos para el Modal de Promociones */
@@ -256,8 +259,8 @@ body {
 }
 
 #modalPromociones .modal-body ul li::before {
-    content: "\f00c"; /* Ícono de check de Font Awesome */
-    font-family: "Font Awesome 6 Free";
+    content: "\F269"; 
+    font-family: "bootstrap-icons" !important; 
     font-weight: 900;
     color: #1EAE98; /* Color Aqua */
     position: absolute;
@@ -343,6 +346,171 @@ body {
     color: #09203F; /* Azul oscuro en hover */
 }
 
+/*============================================*/
+/* --- Sección de Elige la Mejor Opción IT 
+/*===========================================*/
+#best-it-option {
+    background-color: #F8F9FA; /* Un gris muy suave para el fondo de la sección */
+    padding: 6rem 0;
+}
+
+.it-circle-service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem; /* Ajuste de padding para el bloque completo */
+    border-radius: 75px; /* Bordes ligeramente redondeados para el área clicable */
+    background-color: #FFFFFF; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04); /* Sombra sutil */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    height: 100%; /* Asegura que todos los bloques tengan la misma altura */
+    position: relative; 
+    overflow: hidden; /* Para asegurar que los efectos no se desborden */
+}
+
+.it-circle-service::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  #1EAE98; /* Degradado para el hover */
+    border-radius: 15px;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.it-circle-service:hover {
+    transform: translateY(-10px); /* Efecto de elevación al hacer hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF !important; /* Asegura el texto blanco en hover */
+}
+
+.it-circle-service:hover::before {
+    opacity: 1; /* Muestra el degradado en hover */
+}
+
+.it-circle-service:hover .it-circle-icon {
+    background-color: #FFFFFF; /* Icono blanco en hover */
+}
+
+.it-circle-service:hover .it-circle-icon i {
+    background: linear-gradient(to right, #09203F, #1EAE98); /* Degradado para el icono en hover */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback */
+}
+
+.it-circle-service:hover h3,
+.it-circle-service:hover p {
+    color: #FFFFFF !important; /* Texto blanco en hover */
+    position: relative; /* Asegura que el texto esté por encima del ::before */
+    z-index: 1;
+}
+
+.it-circle-icon {
+    width: 90px; /* Tamaño del círculo del icono */
+    height: 90px;
+    background-color: #1EAE98; /* Color Aqua para el fondo del círculo */
+    border-radius: 50%; /* Hace que sea un círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para el círculo del icono */
+    transition: background-color 0.3s ease-in-out;
+    position: relative; /* Para el z-index */
+    z-index: 1;
+}
+
+.it-circle-icon i {
+    color: #FFFFFF; /* Color blanco para el icono */
+    font-size: 3rem; /* Tamaño grande del icono */
+    transition: all 0.3s ease-in-out;
+}
+
+.it-circle-service h3 {
+    color: #09203F; /* Azul oscuro para los títulos */
+    font-size: 1.25rem; 
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.it-circle-service p {
+    color: #606060; /* Gris oscuro para el texto */
+    font-size: 0.8rem; 
+    line-height: 1.6;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio restante */
+    position: relative;
+    z-index: 1;
+}
+
+/*========================================*/
+/* --- Sección "Tienes un proyecto en mente?" (Call to Action) --- */
+/*========================================*/
+#project-cta {
+    background: url('./assets/images/informatica-1.jpg') no-repeat center center/cover; 
+    background-color: #09203F; /* Color de fallback si no carga la imagen*/
+    padding: 8rem 0; 
+    position: relative;
+    color: #FFFFFF; /* Texto blanco por defecto */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Sombra sutil para el texto sobre el fondo */
+}
+
+/* Overlay para la imagen de fondo */
+#project-cta .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( to right, rgba(9, 32, 63, 0.90), rgba(30, 174, 152, 0.45)); 
+    z-index: 0;
+}
+
+#project-cta .container {
+    position: relative; /* Asegura que el contenido del container esté por encima del overlay */
+    z-index: 1;
+}
+
+#project-cta h2 {
+    font-size: 2.4rem; 
+    font-weight: 500; 
+    margin-bottom: 1.4rem;
+    color: #FFFFFF; /* Asegura el blanco del título */
+}
+
+#project-cta .lead-text {
+    font-size: 1rem; 
+    font-weight: 300;
+    max-width: 700px; 
+    margin: 0 auto 2.5rem auto; 
+    color: #F0F0F0; 
+}
+
+/* Estilos para el botón CTA personalizado */
+.btn-cta {
+    background: #1EAE98; /* Degradado para el botón */
+    border: none;
+    color: #FFFFFF;
+    padding: 0.9rem 2.5rem; 
+    border-radius: 50px; 
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-cta:hover {
+    transform: translateY(-5px); /* Pequeño efecto de elevación al hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
+    opacity: 0.9; 
+}
 /*=============================================*/
               /* Media queries */
 /*=============================================*/
@@ -438,7 +606,7 @@ body {
 }
 
 @media (max-width: 768px) { 
-    #que-hacemos .row-cols-md-2 > {
+    #que-hacemos .row-cols-md-2 > *{
         flex: 0 0 auto;
         width: 90%; /* 1 columna */
     }
@@ -470,3 +638,77 @@ body {
         font-size: 0.75rem;
     }
 }
+/* ----Sección Elige la mejor opción IT-----*/
+@media (max-width: 991.98px) { 
+    .it-circle-service {
+        padding: 2rem 1rem;
+    }
+    .it-circle-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .it-circle-icon i {
+        font-size: 2.5rem;
+    }
+    .it-circle-service h3 {
+        font-size: 1.15rem;
+    }
+    .it-circle-service p {
+        font-size: 0.75rem; 
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .it-circle-service {
+        padding: 1.8rem 0.8rem;
+    }
+    .it-circle-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.5rem;
+    }
+    .it-circle-icon i {
+        font-size: 2.2rem;
+    }
+    .it-circle-service h3 {
+        font-size: 1.1rem;
+    }
+    .it-circle-service p {
+        font-size: 0.7rem; 
+    }
+}
+
+
+/* Sección de Have a project in mind?*/
+@media (max-width: 991.98px) {
+    #project-cta {
+        padding: 6rem 0;
+    }
+    #project-cta h2 {
+        font-size: 2rem;
+    }
+    #project-cta .lead-text {
+        font-size: 1rem;
+    }
+    .btn-cta {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #project-cta {
+        padding: 5rem 0;
+    }
+    #project-cta h2 {
+        font-size: 1.8rem;
+    }
+    #project-cta .lead-text {
+        font-size: 0.95rem;
+    }
+    .btn-cta {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.95rem;
+    }
+}
+

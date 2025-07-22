@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Opcional: Resaltar enlace activo al hacer scroll (más avanzado)
-    const sections = document.querySelectorAll('section'); // Asume que tus secciones tendrán la etiqueta <section>
+    // Resaltar enlace activo al hacer scroll 
+    const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
 
     window.addEventListener('scroll', function() {
         let current = '';
@@ -84,10 +84,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
      // 4. Manipulación del DOM: Abrir Modal de Promociones (por ID)
-    const btnPromociones = document.getElementById('btnPromociones'); // Botón de promociones por ID
-    const modalPromociones = new bootstrap.Modal(document.getElementById('modalPromociones')); // Instancia del modal de Bootstrap
+    const btnPromociones = document.getElementById('btnPromociones'); // Botón de promociones por ID.
+    const modalPromociones = new bootstrap.Modal(document.getElementById('modalPromociones')); 
 
     btnPromociones.addEventListener('click', function() {
-        modalPromociones.show(); // Muestra el modal cuando se hace clic en el botón
+        modalPromociones.show(); // Muestra el modal cuando se hace clic en el botón.
     });
+
+    // 5. Manipulación del DOM: Call to Action con SweetAlert (por ID)
+    const ctaButton = document.getElementById('ctaButton');
+
+    if (ctaButton) {
+        ctaButton.addEventListener('click', (event) => {
+            event.preventDefault(); 
+
+            Swal.fire({
+                title: '¡Excelente Elección!',
+                html: '<p>Nos emociona tu interés. Pronto serás redirigido a nuestra sección de Contacto para que podamos hablar de tu proyecto.</p><p>¡Estamos listos para hacer realidad tus ideas!</p>',
+                icon: 'success', // Icono de éxito
+                timer: 6000, // Cerrar automáticamente después de 6 segundos.
+                timerProgressBar: true,
+                showConfirmButton: false, // No mostrar el botón de confirmación.
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                    toast.addEventListener('mouseleave', Swal.resumeTimer);
+                },
+                willClose: () => {
+                    // Redirigir a la sección de contacto después de que el SweetAlert se cierre.
+                    window.location.href = '#contacto';
+                }
+            });
+        });
+    }
 });
