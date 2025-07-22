@@ -1,3 +1,8 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -12,6 +17,43 @@ header.navbar {
 header.navbar.hide-header {
   transform: translateY(-100%);
 }
+
+/* Asegura que ocupe todo el ancho disponible */
+.swiper {
+  width: 100vw;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+/* Espaciado entre tarjetas */
+.swiper-slide {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: auto;
+  margin: 0 10px; /* Espacio entre cards */
+}
+
+/* Estilo al hacer hover */
+.swiper-slide:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* Alineación de tarjetas */
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Evita que se corte contenido */
+.plan-box {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 
 
 
