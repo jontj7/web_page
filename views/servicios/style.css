@@ -450,13 +450,14 @@ body {
     z-index: 1;
 }
 
-/*========================================*/
-/* --- Sección "Tienes un proyecto en mente?" (Call to Action) --- */
-/*========================================*/
+/*=======================================================================*/
+/* --- Sección de Tienes un proyecto en mente? - Call to Action --- */
+/*=========================================================================*/
 #project-cta {
     background: url('./assets/images/informatica-1.jpg') no-repeat center center/cover; 
     background-color: #09203F; /* Color de fallback si no carga la imagen*/
     padding: 8rem 0; 
+    margin-bottom: 10px;
     position: relative;
     color: #FFFFFF; /* Texto blanco por defecto */
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Sombra sutil para el texto sobre el fondo */
@@ -511,6 +512,62 @@ body {
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
     opacity: 0.9; 
 }
+
+/*------------Sección del footer-------*/
+
+.footer {
+  background-color: #09203F;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  width: 180px; /* Aumentado desde 80px */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social a i {
+  font-size: 24px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover i {
+  transform: scale(1.2);
+  color: #00b894;
+}
+
 /*=============================================*/
               /* Media queries */
 /*=============================================*/
