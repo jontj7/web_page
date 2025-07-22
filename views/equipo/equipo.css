@@ -1,0 +1,430 @@
+/* Estilos generales para el cuerpo (body) */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #181818;
+  color: #fff;
+}
+
+/* === ESTILOS PARA EL SIDEBAR (MENÚ HAMBURGUESA) === */
+.sidebar-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* Ancho de la barra lateral */
+  height: 100vh;
+  background: #1a1a1a;
+  color: white;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%); /* Oculto por defecto */
+  z-index: 1000;
+}
+
+.sidebar.open {
+  transform: translateX(0); /* Visible cuando tiene la clase 'open' */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar-logo {
+  width: 100px;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 15px;
+}
+
+.sidebar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.sidebar-links a:hover {
+  color: #00b894;
+}
+/* === FIN DE ESTILOS PARA EL SIDEBAR === */
+
+/* Banner del equipo (hero section) */
+.equipo-hero {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content .tagline {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Sección del equipo (donde está el carrusel) */
+.equipo-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.equipo-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #00b894;
+  padding: 0 20px;
+}
+
+.team-swiper-container {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.swiper-backface-hidden .swiper-slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.miembro-foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #00b894;
+  box-sizing: border-box; 
+}
+
+.miembro-nombre {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #eee;
+}
+
+.miembro-cargo {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 15px;
+}
+
+/* Estilos para el modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background-color: #333;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.cerrar-modal:hover {
+  opacity: 1;
+}
+
+#modal-foto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 5px solid #00b894;
+  box-sizing: border-box;
+}
+
+#modal-nombre {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#modal-cargo {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+#modal-bio {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+#modal-linkedin {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#modal-linkedin:hover {
+  background-color: #0056b3;
+}
+
+/* === ESTILOS PARA SECCIONES FINALES (NEWSLETTER, FAQ, FOOTER) === */
+
+/* Contenedor genérico para centrar contenido de estas secciones */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- NEWSLETTER --- */
+.newsletter {
+  background-color: #1f1f1f;
+  padding: 60px 0;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.newsletter h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 6px 0 0 6px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: #00b894;
+}
+
+.newsletter-form button {
+  background-color: #00b894;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #00a082;
+}
+
+/* --- PREGUNTAS FRECUENTES (FAQ) --- */
+.faq {
+  padding: 60px 0;
+  background-color: #181818; /* Mismo color que el body */
+}
+
+.faq h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.faq details {
+  max-width: 700px;
+  margin: 0 auto 15px;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  border: 1px solid #333;
+  padding: 15px 20px;
+}
+
+.faq summary {
+  font-weight: bold;
+  cursor: pointer;
+  list-style-type: '► ';
+  list-style-position: inside;
+  transition: color 0.3s ease;
+}
+
+.faq details[open] > summary {
+  list-style-type: '▼ ';
+  color: #00b894;
+}
+
+.faq p {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social a i {
+  font-size: 24px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover i {
+  transform: scale(1.2);
+  color: #00b894;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InnovaWeb - Nuestro Equipo</title>
+  
+  <link rel="stylesheet" href="equipo.css">
+  <link rel="icon" href="../../assets/images/logow.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <button id="openSidebar" class="sidebar-toggle">☰</button>
+  <aside class="sidebar" id="sidebar">
+  </aside>
+
+  <section class="equipo-hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="../../assets/videos/fondo-hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Nuestro Equipo</h1>
+      <p class="tagline">Somos un colectivo de estrategas, diseñadores y desarrolladores apasionados por la tecnología.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="equipo-section" id="equipo">
+      <div data-aos="fade-up">
+        <div class="swiper team-swiper-container">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide miembro-card" 
+                 data-nombre="Isai Contreras" 
+                 data-cargo="Desarrollador Frontend" 
+                 data-bio="Isai es un apasionado del diseño UI/UX y experto en React y Vue.js. Le encanta transformar ideas complejas en interfaces amigables, eficientes y accesibles para todos los usuarios." 
+                 data-foto="../../assets/images/equipo/isai.jpg"
+                 data-linkedin="https://www.linkedin.com/">
+              <img src="../../assets/images/equipo/isai.jpg" alt="Foto de Isai Contreras" class="miembro-foto">
+              <h3 class="miembro-nombre">Isai Contreras</h3>
+              <p class="miembro-cargo">Desarrollador Frontend</p>
+            </div>
+
+            <div class="swiper-slide miembro-card" 
+                 data-nombre="Diego Cuellar" 
+                 data-cargo="Desarrollador Backend" 
+                 data-bio="Diego es el arquitecto detrás de nuestros sistemas. Con amplia experiencia en Laravel, Node.js y bases de datos, garantiza que cada proyecto sea robusto, seguro y escalable." 
+                 data-foto="../../assets/images/equipo/diego.jpg"
+                 data-linkedin="https://www.linkedin.com/">
+              <img src="../../assets/images/equipo/diego.jpg" alt="Foto de Diego Cuellar" class="miembro-foto">
+              <h3 class="miembro-nombre">Diego Cuellar</h3>
+              <p class="miembro-cargo">Desarrollador Backend</p>
+            </div>
+
+            <div class="swiper-slide miembro-card" 
+                 data-nombre="Clara Fuentes" 
+                 data-cargo="Líder de Proyecto / Project Manager" 
+                 data-bio="Clara es el puente entre nuestros clientes y el equipo técnico. Se asegura de que cada proyecto cumpla con los plazos, el presupuesto y, lo más importante, las expectativas del cliente." 
+                 data-foto="../../assets/images/equipo/clara.jpg"
+                 data-linkedin="https://www.linkedin.com/">
+              <img src="../../assets/images/equipo/clara.jpg" alt="Foto de Clara Fuentes" class="miembro-foto">
+              <h3 class="miembro-nombre">Clara Fuentes</h3>
+              <p class="miembro-cargo">Project Manager</p>
+            </div>
+            
+            <div class="swiper-slide miembro-card" 
+                 data-nombre="Jonathan Martinez" 
+                 data-cargo="Especialista en QA" 
+                 data-bio="Jonathan es nuestro guardián de la calidad. Se dedica a probar exhaustivamente cada funcionalidad para asegurar que todo funcione a la perfección antes de cualquier lanzamiento." 
+                 data-foto="../../assets/images/equipo/avatar.jpg"
+                 data-linkedin="https://www.linkedin.com/in/jonathan-martinez-23324413a/">
+              <img src="../../assets/images/equipo/avatar.jpg" alt="Foto de Jonathan Martinez" class="miembro-foto">
+              <h3 class="miembro-nombre">Jonathan Martinez</h3>
+              <p class="miembro-cargo">Especialista en QA</p>
+            </div>
+
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="newsletter">
+    <div class="container" data-aos="fade-up">
+      <h2>Suscríbete a nuestro boletín</h2>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <button type="submit">Suscribirme</button>
+      </form>
+    </div>
+  </section>
+    
+  <section class="faq" id="faq">
+    <div class="container" data-aos="fade-up">
+      <h2>Preguntas Frecuentes</h2>
+      <details>
+        <summary>¿Cuánto tarda un sitio web?</summary>
+        <p>Depende del proyecto, pero en promedio entre 2 y 4 semanas.</p>
+      </details>
+      <details>
+        <summary>¿Aceptan pagos por cuotas?</summary>
+        <p>Sí, tenemos opciones flexibles de pago.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand" data-aos="fade-up" data-aos-once="true">
+        <img src="../../assets/images/InnovaWeb.png" alt="Logo Agencia" class="footer-logo">
+        <p>Agencia Creativa XYZ &copy; 2025 - Todos los derechos reservados.</p>
+      </div>
+
+      <div class="footer-links" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Portafolio</a>
+        <a href="#">Contacto</a>
+      </div>
+
+      <div class="footer-social" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+  <div id="equipo-modal" class="modal-overlay">
+    <div class="modal-contenido">
+      <span id="cerrar-modal" class="cerrar-modal">&times;</span>
+      <img id="modal-foto" src="" alt="Foto del miembro del equipo">
+      <h2 id="modal-nombre"></h2>
+      <h4 id="modal-cargo"></h4>
+      <p id="modal-bio"></p>
+      <a id="modal-linkedin" href="#" target="_blank" class="btn-cta">Ver perfil en LinkedIn</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init({ once: true });
+    
+    const teamSwiper = new Swiper('.team-swiper-container', {
+        loop: false,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: { slidesPerView: 2, spaceBetween: 30 },
+            1024: { slidesPerView: 3, spaceBetween: 40 }
+        }
+    });
+  </script>
+
+  <script src="../../js/index_js/Doom_js/equipo-modal.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sidebar = document.getElementById('sidebar');
+      const openSidebarBtn = document.getElementById('openSidebar');
+  
+      sidebar.innerHTML = `
+        <div class="sidebar-header">
+          <img src="../../assets/images/InnovaWeb.png" alt="Logo" class="sidebar-logo">
+        </div>
+        <ul class="sidebar-links">
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Portafolio</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      `;
+  
+      function toggleSidebar() {
+        sidebar.classList.toggle('open');
+      }
+  
+      openSidebarBtn.addEventListener('click', toggleSidebar);
+  
+      document.addEventListener('click', (event) => {
+        if (sidebar.classList.contains('open') && !sidebar.contains(event.target) && event.target !== openSidebarBtn) {
+          toggleSidebar();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
