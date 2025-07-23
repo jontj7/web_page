@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="icon" href="./assets/images/logow.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header>
+        <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/images/InnovaWeb2-01.png" alt="Logo Innova-Web" class="img-fluid logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active fw-normal" aria-current="page" href="#h">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-normal" href="./index.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-normal" href="#">Casos de éxito</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-normal" href="#">Contacto</a>
+                        </li>                     
+                    </ul>
+                    <div class="d-flex align-items-center ms-lg-3">
+                        <button class="btn btn-link text-white me-2 search-icon-btn" id="searchIconBtn">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <div class="search-input-container" id="searchContainer">
+                            <input type="text" class="form-control search-input" placeholder="Buscar...">
+                        </div>
+                        <a href="#contacto" class="btn btn-custom-gradient ms-2 fw-normal">Contratar Servicios</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+</header>
+<main>
+<!------------ Hero Section --------------------->
+<section id="hero" class="hero-section d-flex align-items-center text-white text-center">
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+                <source src="./assets/videos/tecnologia-video1.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <div class="overlay gradient-bg-primary-opacity"></div>
+        </div>
+        <div class="container position-relative z-1">
+            <h1 class="display-3 fw-normal mb-4 animate__animated animate__fadeInDown">Transformamos Ideas en Realidad Digital</h1>
+            <p class="lead mb-5 animate__animated animate__fadeInUp animate__delay-1s">Ofrecemos soluciones integrales en construcción, diseño web, optimización y consultoría estratégica.</p>
+            <button id="btnPromociones" class="btn btn-lg animate__animated animate__zoomIn animate__delay-1s fw-light">Nuestras Promociones</button>
+        </div>
+    </section>
+
+    <div class="modal fade" id="modalPromociones" tabindex="-1" aria-labelledby="modalPromocionesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-gradient-primary" id="modalPromocionesLabel">¡Ofertas Especiales para Ti!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-dark">¡Aprovecha nuestras promociones exclusivas del mes! Obtén un <strong>15% de descuento</strong> en tu primer proyecto de diseño web, o un <strong>paquete de consultoría IT gratuito</strong> al contratar un proyecto de construcción.</p>
+                    <ul>
+                        <li class="text-dark">Diseño Web Completo + SEO Básico: <strong>¡20% de descuento!</strong></li>
+                        <li class="text-dark">Auditoría de Infraestructura IT: <strong>¡50% de descuento!</strong></li>
+                        <li class="text-dark">Construcción de Espacios Comerciales: <strong>¡Financiamiento preferencial!</strong></li>
+                    </ul>
+                    <p class="text-dark-light">Ofertas válidas hasta el 31 de Julio de 2025. ¡Contáctanos para más detalles!</p>
+                    <a href="#contacto" class="btn btn-custom-gradient w-100 mt-3 fw-normal" data-bs-dismiss="modal">¡Quiero mi Promoción!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------------- Sección "Qué Hacemos" ----------------------->
+    <section id="que-hacemos" class="py-5 bg-light">
+        <div class="container-cards">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-4 fw-normal mb-3 text-gradient-primary animate__animated animate__fadeInUp">Nuestros Pilares: Soluciones Completas</h2>
+                    <p class="lead fw-normal text-muted animate__animated animate__fadeInUp animate__delay-1s">Conoce cómo impulsamos tu proyecto desde la base hasta el éxito digital, con un enfoque integral y personalizado.</p>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center justify-content-center">
+                <div class="col d-flex justify-content-center animate__animated animate__zoomIn animate__delay-1s">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper mb-3">
+                            <img src="./assets/images/estructuracion-icon.png" alt="Icono de Estructuración Web" width="60%">
+                        </div>
+                        <h3 class="h5 fw-normal mb-2 ps-2 pe-2 pb-3">Estructura y Reestructuración Web</h3>
+                        <p class="text-muted small ps-3 pe-3">Desde la arquitectura de información hasta interfaces robustas, construimos la base de tu presencia digital.</p>
+                        <a href="#contacto" class="read-more-link mt-auto">Leer más <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center animate__animated animate__zoomIn animate__delay-1-5s">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper mb-3">
+                            <img src="./assets/images/diseñoWeb-icon.png" alt="Icono de diseño Web" width="55%">
+                        </div>
+                        <h3 class="h5 fw-normal mb-2 p1-2 pe-2 pb-3">Diseño y Desarrollo Web</h3>
+                        <p class="text-muted small ps-2 pe-2 ">Creamos experiencias digitales atractivas y funcionales, adaptadas a tus necesidades y objetivos de negocio.</p>
+                        <a href="#contacto" class="read-more-link mt-auto">Leer más <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center animate__animated animate__zoomIn animate__delay-2s">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper mb-3">
+                            <img src="./assets/images/seo-icon.png" alt="Icono de SEO" width="60%">
+                        </div>
+                        <h3 class="h5 fw-normal mb-2 ps-2 pe-2 pb-3">Optimización SEO y Marketing Digital</h3>
+                        <p class="text-muted small ps-3 pe-3">Impulsamos tu visibilidad online para que tus clientes te encuentren, generando tráfico de calidad.</p>
+                        <a href="#contacto" class="read-more-link mt-auto">Leer más <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center animate__animated animate__zoomIn animate__delay-2-5s">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper mb-3">
+                            <img src="./assets/images/consultoria-icon.png" alt="Icono de Consultoria IT" width="80%">
+                        </div>
+                        <h3 class="h5 fw-normal mb-2 ps-2 pe-2 pb-3">Consultoría Estratégica IT</h3>
+                        <p class="text-muted small ps-3 pe-3">Guía experta para la toma de decisiones tecnológicas que transforman y modernizan tu negocio.</p>
+                        <a href="#contacto" class="read-more-link mt-auto">Leer más <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-----------------------Sección de Elige la Mejor Opción--------------------------------->
+    <section id="best-it-option" class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-normal mb-3 text-gradient-primary animate__animated animate__fadeInUp">Impulsa tu Negocio: Soluciones IT Clave</h2>
+                    <p class="fw-normal text-muted animate__animated animate__fadeInUp animate__delay-1s">Descubre cómo nuestras estrategias tecnológicas personalizadas pueden optimizar y proteger tu infraestructura digital.</p>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+                
+                <div class="col d-flex justify-content-center animate__animated animate__zoomIn animate__delay-1s">
+                    <a href="#contacto" class="it-circle-service text-decoration-none">
+                        <div class="it-circle-icon mb-3">
+                            <i class="bi bi-shield-check"></i> </div>
+                        <h3 class="h5 fw-normal mb-2 text-dark">Ciberseguridad Avanzada</h3>
+                        <p class="small text-muted">Protege tus activos digitales con estrategias robustas y monitoreo proactivo.</p>
+                    </a>
+                </div>
+
+                <div class="col d-flex justify-content-center animate__animated animate__zoomIn animate__delay-1-5s">
+                    <a href="#contacto" class="it-circle-service text-decoration-none">
+                        <div class="it-circle-icon mb-3">
+                            <i class="bi bi-cloud-arrow-up"></i> </div>
+                        <h3 class="h5 fw-normal mb-2 text-dark">Soluciones Cloud Híbridas</h3>
+                        <p class="small text-muted">Migra y gestiona tus operaciones en la nube con escalabilidad y seguridad garantizadas.</p>
+                    </a>
+                </div>
+
+                <div class="col d-flex justify-content-center animate__animated animate__zoomIn animate__delay-2s">
+                    <a href="#contacto" class="it-circle-service text-decoration-none">
+                        <div class="it-circle-icon mb-3">
+                            <i class="bi bi-graph-up"></i> </div>
+                        <h3 class="h5 fw-normal mb-2 text-dark">Análisis Inteligente de Datos</h3>
+                        <p class="small text-muted">Convierte tus datos en información valiosa para una toma de decisiones estratégica.</p>
+                    </a>
+                </div>
+
+                <div class="col d-flex justify-content-center animate__animated animate__zoomIn animate__delay-2-5s">
+                    <a href="#contacto" class="it-circle-service text-decoration-none">
+                        <div class="it-circle-icon mb-3">
+                            <i class="bi bi-code-slash"></i> </div>
+                        <h3 class="h5 fw-normal mb-2 text-dark">Desarrollo de Software a Medida</h3>
+                        <p class="small text-muted">Crea soluciones personalizadas que se ajusten perfectamente a los flujos de trabajo de tu negocio.</p>
+                    </a>
+                </div>
+
+                <div class="col d-flex justify-content-center animate__animated animate__zoomIn animate__delay-3s">
+                    <a href="#contacto" class="it-circle-service text-decoration-none">
+                        <div class="it-circle-icon mb-3">
+                            <i class="bi bi-headset"></i> </div>
+                        <h3 class="h5 fw-normal mb-2 text-dark">Soporte y Mantenimiento IT</h3>
+                        <p class="small text-muted">Garantiza el funcionamiento continuo de tus sistemas con asistencia técnica proactiva.</p>
+                    </a>
+                </div>
+
+                <div class="col d-flex justify-content-center animate__animated animate__zoomIn animate__delay-3-5s">
+                    <a href="#contacto" class="it-circle-service text-decoration-none">
+                        <div class="it-circle-icon mb-3">
+                            <i class="bi bi-lightbulb"></i> </div>
+                        <h3 class="h5 fw-normal mb-2 text-dark">Consultoría Estratégica IT</h3>
+                        <p class="small text-muted">Guía experta para la toma de decisiones tecnológicas que impulsan el crecimiento.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-----------------------Sección de Have a project in mind?--------------------------------->
+    <section id="project-cta" class="py-5 text-white position-relative overflow-hidden">
+        <div class="background-overlay"></div>
+        <div class="container text-center position-relative z-1">
+            <div class="row">
+                <div class="col-lg-10 mx-auto"> 
+                    <h2 class="display-5 fw-normal mb-3 animate__animated animate__fadeInUp">¿Tienes un Proyecto en Mente?</h2>
+                    <p class="lead-text mb-4 animate__animated animate__fadeInUp animate__delay-1s">Transformamos tus ideas en soluciones digitales innovadoras. ¡Conversemos!</p>
+                    <a href="#contacto" id="ctaButton" class="btn btn-cta btn-lg animate__animated animate__zoomIn animate__delay-1-5s">Empecemos a Crear Juntos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand" data-aos="fade-up" data-aos-once="true">
+      <img src="./assets/images/InnovaWeb2-01.png" alt="Logo Agencia" class="footer-logo">
+      <p>Agencia Creativa XYZ &copy; 2025 - Todos los derechos reservados.</p>
+    </div>
+
+    <div class="footer-links" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+    <div class="footer-social" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

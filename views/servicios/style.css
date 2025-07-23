@@ -1,0 +1,771 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*--------------------Reset de stilos del home------------------*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #606060; /* Color de texto general */
+     background-color: #09203F; /* Fondo general de la página */
+    padding-top: 76px; /* Para evitar que el contenido se superponga con la navbar fija */
+}
+
+/* Clases para el degradado personalizado */
+.gradient-bg-primary {
+    background: linear-gradient(to right, #09203F, #1EAE98);
+}
+
+.text-gradient-primary {
+    background: linear-gradient(to right, #09203F, #1EAE98);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback para navegadores que no soportan text-fill-color */
+}
+
+/* Estilos de la Navbar */
+#mainNavbar {
+    background-color: transparent; /* Inicialmente transparente */
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0.4rem 0; /* Padding inicial */
+}
+
+#mainNavbar .logo {
+    max-width: 180px; /* Tamaño del logo */
+    height: auto;
+    transition: max-width 0.3s ease-in-out; /* Transición para el tamaño del logo */
+}
+
+#mainNavbar .navbar-nav .nav-link {
+    color: #FFFFFF; /* Texto del enlace blanco */
+    font-weight: 600;
+    margin-right: 15px;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+#mainNavbar .navbar-nav .nav-link:hover,
+#mainNavbar .navbar-nav .nav-link.active {
+    color: #1EAE98; /* Color Aqua en hover o activo */
+}
+
+/* Efecto subrayado para enlaces activos/hover */
+#mainNavbar .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #1EAE98; /* Color Aqua para el subrayado */
+    transition: width 0.3s ease-in-out;
+}
+
+#mainNavbar .navbar-nav .nav-link:hover::after,
+#mainNavbar .navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* Estilo para el botón con degradado */
+.btn-custom-gradient {
+    background:  #1EAE98;
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 25px;
+    border-radius: 50px; /* Bordes redondeados */
+    font-weight: 500;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom-gradient:hover {
+    transform: translateY(-3px); /* Pequeño efecto de elevación */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF; /* Mantiene el color blanco en hover */
+}
+
+/* Estilos para el botón de búsqueda */
+.search-icon-btn {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.search-input-container {
+    opacity: 0; /* Inicialmente transparente */
+    width: 0; /* Ancho inicial 0 */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Añade transición para opacity */
+    pointer-events: none; /* Evita interacciones cuando está oculto */
+}
+
+.search-input-container.active {
+    opacity: 1; /* Completamente visible */
+    width: 200px; /* Ancho deseado cuando está activo */
+    pointer-events: auto; /* Permite interacciones cuando está activo */
+}
+
+.search-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #1EAE98;
+    box-shadow: 0 0 0 0.25rem rgba(30, 174, 152, 0.25); /* Sombra de enfoque con color Aqua */
+}
+
+/* Estilo para la navbar al hacer scroll (sticky) */
+#mainNavbar.scrolled {
+    background: linear-gradient(to right, #09203F, #1EAE98); /* Degradado de fondo */
+    padding: 0.5rem 0; /* Padding reducido */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /
+}
+
+#mainNavbar.scrolled .logo {
+    max-width: 150px; /* Logo más pequeño cuando está pegado */
+}
+/*-------------------------------------------------*/
+/* --- Sección Principal (Hero Section) ----- */
+/*-------------------------------------------------*/
+.hero-section {
+    position: relative;
+    height: 60vh; /* Ocupa el 100% de la altura de la ventana */
+    overflow: hidden; /* Oculta cualquier desbordamiento del video */
+    display: flex; /* Asegura que flexbox funcione para centrar */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    padding-top: 0; /* Reinicia el padding superior para la sección */
+}
+
+.hero-section .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-section .video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra todo el espacio sin distorsionarse */
+}
+
+/* Overlay con degradado y transparencia */
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to right, rgba(9, 32, 63, 0.65), rgba(30, 174, 152, 0.55)); /* 65% y 55% de opacidad */
+}
+
+/* Contenido de texto y botón */
+.hero-section .container {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté por encima del overlay */
+    padding-bottom: 80px; /* Espacio para el botón si se posiciona de forma absoluta */
+}
+
+.hero-section h1 {
+    font-size: 3rem; /* Tamaño de fuente para el título principal */
+    font-weight: 400;
+    max-width: 900px; /* Limita el ancho del párrafo */
+    margin: 0 auto; /* Centra el título */
+    padding-top: 30px;
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section p.lead {
+    font-size: 1.15rem;
+    color: #EBEBEB; /* Gris claro para el subtítulo */
+    max-width: 700px;
+    margin: 0 auto 3rem auto; /* Centra el párrafo y añade margen inferior */
+}
+#btnPromociones {
+    font-size: 1.03rem;
+    background-color: #1EAE98;
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 25px;
+    border-radius: 50px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#btnPromociones:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF; 
+    opacity: 0.80;
+}
+
+/* Estilos para el Modal de Promociones */
+#modalPromociones .modal-content {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#modalPromociones .modal-header {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #F8F9FA;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#modalPromociones .modal-title {
+    font-weight: 700;
+}
+
+#modalPromociones .modal-body {
+    padding: 2rem;
+}
+
+#modalPromociones .modal-body p, #modalPromociones .modal-body li {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #606060;
+}
+
+#modalPromociones .modal-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
+
+#modalPromociones .modal-body ul li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+#modalPromociones .modal-body ul li::before {
+    content: "\F269"; 
+    font-family: "bootstrap-icons" !important; 
+    font-weight: 900;
+    color: #1EAE98; /* Color Aqua */
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+/*========================================*/
+/* --- Sección "Qué Hacemos" --- */
+/*========================================*/
+#que-hacemos {
+    background-color: #EBEBEB; /* Gris claro para el fondo */
+    padding: 6rem 0; /* Aumenta el padding para más espacio */
+}
+.container-cards h2{
+    font-size: 2.6rem;
+    padding-top: 30px;
+    max-width: 800px;
+    margin: 0 auto; /* Centra el título */
+}
+.container-cards p {
+    font-size: 1rem;
+    padding: 0 40px; /* Añade padding a los lados */
+    max-width: 900px; /* Limita el ancho del párrafo */
+    margin: 0 auto; /* Centra el párrafo */
+    margin-bottom: 1rem; 
+}
+#que-hacemos .row-cols-lg-4 > * {
+        flex: 0 0 auto;
+        width: 21%; /* 4 columnas */
+    }
+
+.service-card {
+    background-color: #FFFFFF;
+    border-radius: 15px; 
+    padding: 2.5rem 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex; /* Para flexbox interno de la tarjeta */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; 
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05); 
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
+}
+
+.service-card .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: #1EAE98; /* Degradado para el fondo del icono */
+    border-radius: 50%; /* Icono en círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    color: #09203F; /* Título azul oscuro */
+    font-size: 1.3rem; 
+    margin-bottom: 0.8rem;
+}
+
+.service-card p {
+    color: #606060; /* Texto gris oscuro */
+    font-size: 0.9rem; 
+    line-height: 1.6;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio restante */
+}
+
+.service-card .read-more-link {
+    color: #1EAE98; /* Color Aqua para el enlace "Leer más" */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.service-card .read-more-link:hover {
+    color: #09203F; /* Azul oscuro en hover */
+}
+
+/*============================================*/
+/* --- Sección de Elige la Mejor Opción IT 
+/*===========================================*/
+#best-it-option {
+    background-color: #F8F9FA; /* Un gris muy suave para el fondo de la sección */
+    padding: 6rem 0;
+}
+
+.it-circle-service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem; /* Ajuste de padding para el bloque completo */
+    border-radius: 75px; /* Bordes ligeramente redondeados para el área clicable */
+    background-color: #FFFFFF; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04); /* Sombra sutil */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    height: 100%; /* Asegura que todos los bloques tengan la misma altura */
+    position: relative; 
+    overflow: hidden; /* Para asegurar que los efectos no se desborden */
+}
+
+.it-circle-service::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  #1EAE98; /* Degradado para el hover */
+    border-radius: 15px;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.it-circle-service:hover {
+    transform: translateY(-10px); /* Efecto de elevación al hacer hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF !important; /* Asegura el texto blanco en hover */
+}
+
+.it-circle-service:hover::before {
+    opacity: 1; /* Muestra el degradado en hover */
+}
+
+.it-circle-service:hover .it-circle-icon {
+    background-color: #FFFFFF; /* Icono blanco en hover */
+}
+
+.it-circle-service:hover .it-circle-icon i {
+    background: linear-gradient(to right, #09203F, #1EAE98); /* Degradado para el icono en hover */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback */
+}
+
+.it-circle-service:hover h3,
+.it-circle-service:hover p {
+    color: #FFFFFF !important; /* Texto blanco en hover */
+    position: relative; /* Asegura que el texto esté por encima del ::before */
+    z-index: 1;
+}
+
+.it-circle-icon {
+    width: 90px; /* Tamaño del círculo del icono */
+    height: 90px;
+    background-color: #1EAE98; /* Color Aqua para el fondo del círculo */
+    border-radius: 50%; /* Hace que sea un círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para el círculo del icono */
+    transition: background-color 0.3s ease-in-out;
+    position: relative; /* Para el z-index */
+    z-index: 1;
+}
+
+.it-circle-icon i {
+    color: #FFFFFF; /* Color blanco para el icono */
+    font-size: 3rem; /* Tamaño grande del icono */
+    transition: all 0.3s ease-in-out;
+}
+
+.it-circle-service h3 {
+    color: #09203F; /* Azul oscuro para los títulos */
+    font-size: 1.25rem; 
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.it-circle-service p {
+    color: #606060; /* Gris oscuro para el texto */
+    font-size: 0.8rem; 
+    line-height: 1.6;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio restante */
+    position: relative;
+    z-index: 1;
+}
+
+/*=======================================================================*/
+/* --- Sección de Tienes un proyecto en mente? - Call to Action --- */
+/*=========================================================================*/
+#project-cta {
+    background: url('./assets/images/informatica-1.jpg') no-repeat center center/cover; 
+    background-color: #09203F; /* Color de fallback si no carga la imagen*/
+    padding: 8rem 0; 
+    margin-bottom: 10px;
+    position: relative;
+    color: #FFFFFF; /* Texto blanco por defecto */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Sombra sutil para el texto sobre el fondo */
+}
+
+/* Overlay para la imagen de fondo */
+#project-cta .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( to right, rgba(9, 32, 63, 0.90), rgba(30, 174, 152, 0.45)); 
+    z-index: 0;
+}
+
+#project-cta .container {
+    position: relative; /* Asegura que el contenido del container esté por encima del overlay */
+    z-index: 1;
+}
+
+#project-cta h2 {
+    font-size: 2.4rem; 
+    font-weight: 500; 
+    margin-bottom: 1.4rem;
+    color: #FFFFFF; /* Asegura el blanco del título */
+}
+
+#project-cta .lead-text {
+    font-size: 1rem; 
+    font-weight: 300;
+    max-width: 700px; 
+    margin: 0 auto 2.5rem auto; 
+    color: #F0F0F0; 
+}
+
+/* Estilos para el botón CTA personalizado */
+.btn-cta {
+    background: #1EAE98; /* Degradado para el botón */
+    border: none;
+    color: #FFFFFF;
+    padding: 0.9rem 2.5rem; 
+    border-radius: 50px; 
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-cta:hover {
+    transform: translateY(-5px); /* Pequeño efecto de elevación al hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
+    opacity: 0.9; 
+}
+
+/*------------Sección del footer-------*/
+
+.footer {
+  background-color: #09203F;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  width: 180px; /* Aumentado desde 80px */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social a i {
+  font-size: 24px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover i {
+  transform: scale(1.2);
+  color: #00b894;
+}
+
+/*=============================================*/
+              /* Media queries */
+/*=============================================*/
+/*--------Sección de navbar---------------*/
+@media (max-width: 991.98px) {
+    #mainNavbar .navbar-collapse {
+        background: linear-gradient(to bottom, #09203F, #1EAE98); /* Degradado para el menú colapsado */
+        margin-top: 0.5rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    #mainNavbar .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 0.75rem 0;
+        text-align: center;
+    }
+
+    .search-input-container.active {
+        width: 100%; /* Ancho completo en móviles */
+        margin-top: 10px;
+    }
+}
+/* ----Hero Section--------- */
+@media (max-width: 1200px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+        padding-top: 60px; /* Ajusta el padding superior */
+    }
+
+    .hero-section p.lead {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 1.75rem;
+        padding-top: 45px;
+    }
+
+    .hero-section p.lead {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.5rem;
+        padding-top: 45px;
+    }
+
+    .hero-section p.lead {
+        font-size: 0.75rem;
+        padding-left: 40px; 
+        padding-right: 40px;
+    }
+    .hero-section #btnPromociones {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+}
+
+/* Sección de qué hacemos  */
+@media (max-width: 1200px) { 
+    .container-cards h2 {
+        font-size: 2.2rem;
+        padding-left: 40px; 
+        padding-right: 40px;
+    }
+    .container-cards p {
+        font-size: 0.9rem;
+        padding-left: 40px; 
+        padding-right: 40px;
+        padding-bottom: 5px;
+    }
+
+    #que-hacemos .row-cols-lg-4 > * {
+        flex: 0 0 auto;
+        width: 30%; /* 3 columnas */
+    }
+
+    .service-card p{
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 992px) { 
+    #que-hacemos .row-cols-lg-4 > * {
+        flex: 0 0 auto;
+        width: 50%; /* 2 columnas */
+    }
+}
+
+@media (max-width: 768px) { 
+    #que-hacemos .row-cols-md-2 > *{
+        flex: 0 0 auto;
+        width: 90%; /* 1 columna */
+    }
+    .container-cards h2 {
+        font-size: 1.5rem;
+        padding-left: 40px; 
+        padding-right: 40px;
+    }
+    .container-cards p{
+        font-size: 0.75rem;
+        padding-left: 40px; 
+        padding-right: 40px;
+        padding-bottom: 0px;
+    }
+    .service-card {
+        padding: 2rem 1rem; /* Reduce el padding en móviles */
+    }
+    .service-card .icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+    .service-card .icon-wrapper i {
+        font-size: 2.2rem;
+    }
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+    .service-card p {
+        font-size: 0.75rem;
+    }
+}
+/* ----Sección Elige la mejor opción IT-----*/
+@media (max-width: 991.98px) { 
+    .it-circle-service {
+        padding: 2rem 1rem;
+    }
+    .it-circle-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .it-circle-icon i {
+        font-size: 2.5rem;
+    }
+    .it-circle-service h3 {
+        font-size: 1.15rem;
+    }
+    .it-circle-service p {
+        font-size: 0.75rem; 
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .it-circle-service {
+        padding: 1.8rem 0.8rem;
+    }
+    .it-circle-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.5rem;
+    }
+    .it-circle-icon i {
+        font-size: 2.2rem;
+    }
+    .it-circle-service h3 {
+        font-size: 1.1rem;
+    }
+    .it-circle-service p {
+        font-size: 0.7rem; 
+    }
+}
+
+
+/* Sección de Have a project in mind?*/
+@media (max-width: 991.98px) {
+    #project-cta {
+        padding: 6rem 0;
+    }
+    #project-cta h2 {
+        font-size: 2rem;
+    }
+    #project-cta .lead-text {
+        font-size: 1rem;
+    }
+    .btn-cta {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #project-cta {
+        padding: 5rem 0;
+    }
+    #project-cta h2 {
+        font-size: 1.8rem;
+    }
+    #project-cta .lead-text {
+        font-size: 0.95rem;
+    }
+    .btn-cta {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.95rem;
+    }
+}
+
