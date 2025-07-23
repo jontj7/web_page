@@ -38,27 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Event listener para cada enlace (al hacer clic)
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            removeActiveClass(); // Remueve 'active' de todos los enlaces
-            this.classList.add('active'); // Añade 'active' al enlace clickeado
-            this.setAttribute('aria-current', 'page'); // Actualiza aria-current
-
-            // Smooth scroll al hacer clic en un enlace de la navbar
-            e.preventDefault(); // Evita el comportamiento por defecto del ancla
-            const targetId = this.getAttribute('href'); // Obtiene el ID del destino
-            const targetSection = document.querySelector(targetId); // Selecciona la sección
-            if (targetSection) {
-                // Scroll suave
-                window.scrollTo({
-                    top: targetSection.offsetTop - mainNavbar.offsetHeight, // Ajusta para la altura de la navbar
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
     // Resaltar enlace activo al hacer scroll 
     const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
 
